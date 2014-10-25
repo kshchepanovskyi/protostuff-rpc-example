@@ -100,3 +100,19 @@ mvn clean install
 ```
 
 After compilation you can go to `target/generated-sources` and examine generated code.
+
+Generated service interface:
+
+```java
+package io.protostuff.example.search;
+
+import com.google.common.util.concurrent.ListenableFuture;
+
+public interface SearchService {
+
+  ListenableFuture<SearchResponse> search(SearchRequest request);
+
+  ListenableFuture<SearchResponse> extendedSearch(ExtendedSearchRequest request);
+
+}
+```
