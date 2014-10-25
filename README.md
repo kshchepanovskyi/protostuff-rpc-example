@@ -1,6 +1,6 @@
 # Protostuff RPC Service Example
 
-In many cases we want to define messages and services in the one place using one language.
+In many cases we want to define messages and services in one place using one language.
 This example shows how to do it in a simple way. 
 
 Consider you have an input - proto file like this:
@@ -78,7 +78,7 @@ This diagram shows all properties that are accessible in this block:
 
 ## Maven plugin configuration
 
-You can specify template for service code generation as an additional output of [protostuff-maven-plugin](https://github.com/kshchepanovskyi/protostuff-rpc-example/blob/master/pom.xml#L37):
+You can specify template for service code generation as an additional output for [protostuff-maven-plugin](https://github.com/kshchepanovskyi/protostuff-rpc-example/blob/master/pom.xml#L37):
 
 ```xml
  <source>src/main/proto/search.proto</source>
@@ -89,7 +89,9 @@ You can specify template for service code generation as an additional output of 
 </output>
 ```
 
-This way you can use any template for your messages and custom template for services.
+This way you can use 
+* any template for your messages 
+* custom template for services
 
 ## Build instructions
 
