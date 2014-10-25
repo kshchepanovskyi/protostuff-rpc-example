@@ -1,10 +1,31 @@
 # Protostuff RPC Service Example
 
-This example shows how to generate interfaces for your services using `protostuff-maven-plugin`.
+In many cases we want to define messages and services in the one place using one language.
+This example shows how to do it in a simple way. 
+
+Consider you have an input - proto file like this:
+ 
+```proto
+message SearchRequest {
+    required string keyword = 1;
+}
+
+message SearchResponse {
+    repeated string result = 1;
+}
+
+service SearchService {
+    rpc search (SearchRequest) returns (SearchResponse);
+}
+```
+
+The goal is to generate java code for messages and service interfaces.
 
 ## Project structure
 
-There are three main components in this example:
+In this example we use `protostuff-maven-plugin`.
+
+There are three main components:
 
 1. [search.proto](src/main/proto/search.proto) - contains message and service definitions
 2. [service.java.stg](src/main/st/service.java.stg) - template for code generation (service only)
@@ -69,3 +90,13 @@ You can specify template for service code generation as an additional output of 
 ```
 
 This way you can use any template for your messages and custom template for services.
+
+## Build instructions
+
+As usually:
+
+```
+mvn clean install
+```
+
+After compilation you can go to `target/generated-sources` and examine generated code.
