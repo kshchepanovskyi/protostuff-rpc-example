@@ -81,7 +81,7 @@ This diagram shows all properties that are accessible in this block:
 You can specify template for service code generation as an additional output for [protostuff-maven-plugin](https://github.com/kshchepanovskyi/protostuff-rpc-example/blob/master/pom.xml#L37):
 
 ```xml
- <source>src/main/proto/search.proto</source>
+<source>src/main/proto/search.proto</source>
 <outputDir>target/generated-sources</outputDir>
 <output>
     java_bean,
